@@ -1,0 +1,18 @@
+{
+  "name": "plataforma-cursos-online",
+  "version": "1.0.0",
+  "description": "Plataforma completa para criação e gestão de cursos online",
+  "main": "index.js",
+  "scripts": {
+    "dev": "firebase serve",
+    "build": "npm run build:css",
+    "build:css": "tailwindcss -i ./public/assets/css/input.css -o ./public/assets/css/style.css --watch",
+    "deploy": "firebase deploy"
+  },
+  "dependencies": {
+    "firebase": "^10.7.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.6"
+  }
+}

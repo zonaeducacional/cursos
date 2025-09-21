@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deploy Firebase - EduPlatform</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; }
+        .step { background: #f5f5f5; padding: 15px; margin: 10px 0; border-radius: 8px; }
+        .code { background: #333; color: #fff; padding: 10px; border-radius: 4px; font-family: monospace; }
+        .success { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+        .warning { background: #fff3cd; border: 1px solid #ffeaa7; color: #856404; }
+    </style>
+</head>
+<body>
+    <h1>🚀 Deploy da EduPlatform - Sem npm</h1>
+    
+    <div class="step">
+        <h2>📋 Pré-requisitos</h2>
+        <p>✅ Projeto Firebase: <strong>cursos-online-5aaac</strong></p>
+        <p>✅ Credenciais configuradas no código</p>
+    </div>
+
+    <div class="step">
+        <h2>🔥 1. Configurar Firebase Console</h2>
+        <ol>
+            <li>Acesse: <a href="https://console.firebase.google.com/project/cursos-online-5aaac" target="_blank">Firebase Console</a></li>
+            <li><strong>Authentication</strong> → Sign-in method → Ativar <strong>Google</strong></li>
+            <li><strong>Firestore Database</strong> → Criar banco → Modo produção → Localização: southamerica-east1</li>
+            <li><strong>Hosting</strong> → Vamos começar</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>🌐 2. Deploy via Netlify (Recomendado)</h2>
+        <ol>
+            <li>Acesse: <a href="https://netlify.com" target="_blank">netlify.com</a></li>
+            <li>Faça cadastro gratuito</li>
+            <li>Arraste a pasta <code>public</code> para a área de deploy</li>
+            <li>Aguarde o deploy (1-2 minutos)</li>
+            <li>Copie a URL gerada</li>
+        </ol>
+        <div class="success">
+            <strong>Vantagem:</strong> Deploy em segundos, HTTPS automático, domínio gratuito
+        </div>
+    </div>
+
+    <div class="step">
+        <h2>🐍 3. Teste Local (Python)</h2>
+        <div class="code">
+cd public<br>
+python3 -m http.server 8000
+        </div>
+        <p>Acesse: <a href="http://localhost:8000" target="_blank">http://localhost:8000</a></p>
+    </div>
+
+    <div class="step">
+        <h2>👑 4. Configurar Admin</h2>
+        <ol>
+            <li>Acesse sua plataforma (Netlify ou local)</li>
+            <li>Faça login com Google</li>
+            <li>No <a href="https://console.firebase.google.com/project/cursos-online-5aaac/firestore" target="_blank">Firestore Console</a></li>
+            <li>Encontre seu usuário na coleção <code>users</code></li>
+            <li>Edite o campo <code>role</code> para <code>"admin"</code></li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>🎯 5. Testar Funcionalidades</h2>
+        <ul>
+            <li>✅ Login com Google</li>
+            <li>✅ Acesso ao painel admin: <code>/admin/</code></li>
+            <li>✅ Criar primeiro curso</li>
+            <li>✅ Dashboard estudante: <code>/dashboard/</code></li>
+        </ul>
+    </div>
+
+    <div class="warning">
+        <h3>⚠️ Problemas Comuns</h3>
+        <ul>
+            <li><strong>Erro de CORS:</strong> Use HTTPS (Netlify resolve automaticamente)</li>
+            <li><strong>Login não funciona:</strong> Verificar se Google Auth está ativo</li>
+            <li><strong>Firestore erro:</strong> Verificar se banco foi criado</li>
+        </ul>
+    </div>
+
+    <div class="success">
+        <h3>🎉 Sucesso!</h3>
+        <p>Sua plataforma estará funcionando em:</p>
+        <ul>
+            <li><strong>Netlify:</strong> https://seu-site.netlify.app</li>
+            <li><strong>Local:</strong> http://localhost:8000</li>
+        </ul>
+    </div>
+
+    <script>
+        console.log('🚀 EduPlatform Deploy Guide');
+        console.log('Projeto Firebase: cursos-online-5aaac');
+        console.log('Credenciais: ✅ Configuradas');
+    </script>
+</body>
+</html>
